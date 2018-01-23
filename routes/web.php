@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('management/product', 'ProductController@index');
+
+Route::get('management/product/create', 'ProductController@create');
+
+Route::post('management/product', 'ProductController@store');
+
+
