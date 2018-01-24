@@ -31,9 +31,7 @@
 
 {!!Form::label('Quantity','Quantity:')  !!} 
 
-{!!Form::text('qty',null,["min"=>1,"max"=>100])!!} 
-
-<br><br>
+{!!Form::text('qty',null,["min"=>1,"max"=>100])!!} <br><br>
 
 {!!Form::submit("ตกลง")!!}
 

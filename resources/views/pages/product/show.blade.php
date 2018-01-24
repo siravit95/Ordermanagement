@@ -14,35 +14,34 @@
 </head>
 
 
-<body>
-    <h1>จัดการสินค้า</h1>
-    <hr>
-    <ul>
-        <li>
-            <a href="{{url('/management/product/create')}}">เพิ่มสินค้า</a>
-        </li>
-    </ul>
+<body>    
     <div class="container">
-        @foreach($data as $datas)
+
 
         <div class="panel panel-default">
             <div class="panel-heading">
 
-                Product ID : {{$datas->id}}
-                <br> Name : {{$datas->name}}
-                <br> Price : {{$datas->price}}
+                Product ID : {{$showdata->id}}
+                <br> Name : {{$showdata->name}}
+                <br> Price : {{$showdata->price}}
             </div>
-            <div class="panel-body">{{$datas->detail}}</div>
+            <div class="panel-body">{{$showdata->detail}}</div>
             <div class="panel-footer">
 
-                Qut : {{$datas->qty}}
+                Qut : {{$showdata->qty}}
                 <br>
 
-                <a class="btn btn-default" href="{{url("management/product/{$datas->id}")}}">ดูข้อมูล</a>
-
+                <a class="btn btn-default" href="{{url("management/product/{$showdata->id}/edit")}}">แก้ไข</a> 
+                
+                <br>
+                
+                <div>
+                    {!! Form::open(['method' => 'DELETE', 'url'=> 'management/product/'.$showdata->id]) !!} 
+                    {!! Form::submit('ลบข้อมูล', ['class'=> 'btn btn-danger']) !!} 
+                    {!! Form::close() !!}
+                </div>
             </div>
         </div>
-        @endforeach
 
 
     </div>
